@@ -1,0 +1,790 @@
+@import url('https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap');
+
+
+
+:root {
+    --black-color: #000;
+    --white-color: #FFF;
+    --background-color: #fafaef;
+    --brown-color: #523010;
+    --pink-color: #ffc0cb;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica, sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+a {
+    text-decoration: none;
+}
+/* 
+.hide {
+    display: none;
+} */
+
+/* Container */
+.container {
+    transform-origin: top left;
+    transition: transform 0.5s linear;
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--background-color);
+
+}
+
+/* Header */
+.header {
+    background-color: var(--black-color);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logotipo {
+    color: var(--white-color);
+    font-weight: normal;
+}
+
+#logotipo {
+    position: relative;
+    top: 0.125em;
+    bottom: 5px;
+    padding: 5px;
+}
+
+.logotipo h4{
+    font-family: 'Ms Madi', cursive;
+    font-size: 2em;
+}
+
+.signup {
+    color: var(--white-color);
+    position: absolute;
+    right: 50px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.signup button{
+    color: var(--white-color);
+    background-color: transparent;
+    border: none;
+    font-size: 0.9em;
+}
+
+.icon-user {
+    font-size: 1.7em !important ; 
+}
+
+.circle-container{
+    display: none;
+}
+
+.opacity-page {
+    opacity: 10%;
+}
+
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 100px auto;
+    border: 2px solid var(--brown-color);
+    width: 300px;
+    padding: 10px;
+    border-radius: 7px;
+}
+
+.form-title {
+    color: var(--brown-color);
+    margin-top: 10px;
+}
+
+.input-login {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.input-login input {
+    padding: 7px;
+    width: 230px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+.btn-buy-login {
+    background-color: var(--pink-color);
+    padding: 7px 15px;
+    color: var(--brown-color);
+    border: none;
+    border-radius: 15px;
+    font-size: 0.8em;
+    font-style: italic;
+    margin: 10px auto;
+    opacity: 1;
+    cursor: pointer;
+}
+
+.btn-buy-login:hover {
+    opacity: .7;
+    
+}
+
+
+.recover-password {
+    font-size: 0.7em;
+    margin: 8px 0 18px;
+    cursor: pointer;
+}
+
+.close-page {
+    font-size: .8em;
+    margin-top: 15px;
+    margin-left: 230px;
+    cursor: pointer;
+}
+
+.error {
+    color: var(--brown-color);
+    background-color: rgb(241, 188, 188);
+    font-size: 0.9em;
+    padding: 5px;
+    border-radius: 5px;
+    display: none;
+}
+
+.loading{
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white-color);
+}
+
+.loading-label {
+    font-size: 1.5em;
+}
+
+/* Navbar */
+.navbar {
+    width: 100%;
+    border-bottom: 1px solid var(--white-color);
+    padding-top: 5px;
+}
+.navbar ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    padding: 5px;
+}
+.navbar ul li a i{
+    font-size: 1.4em;
+    padding-bottom: 10px;
+}
+.navbar li a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 18px;
+    color: var(--brown-color);
+    font-size: 1em;
+}
+.navbar li a:hover{
+    opacity: 0.7;
+}
+.hamburger-menu {
+    display: none;
+}
+
+.main {
+    width: 100%;
+}
+
+/* Carousel */
+.wrapper {
+    max-width: 90%;
+    position: relative;
+    margin: 30px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.carousel {
+    white-space: nowrap;
+    overflow: hidden;
+}
+ 
+.wrapper .icon {
+    cursor: pointer;
+    background-color: var(--white-color);
+    color: var(--brown-color);
+    top: 50%;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+}
+
+.icon {
+    position: absolute;
+    transform: translateY(-50%);
+}
+
+#left {
+    left: -18px;
+}
+ 
+#right {
+    right: -18px;
+} 
+#left:hover {
+    background-color: var(--background-color);
+}
+#right:hover {
+    background-color: var(--background-color);
+} 
+
+.carousel img {
+    width: 200px;
+    height: 200px;
+    margin-left: 8px;
+    cursor: pointer;
+    border-radius: 10px;
+    opacity: 90%;
+}
+
+.carousel img:first-child {
+    margin-left: 0;
+} 
+
+.carousel img:hover {
+    opacity: 50%;
+}
+
+
+/* Text home */
+.home-text{
+    display: flex;
+    padding: 5px;
+    background-image: url('https://raw.githubusercontent.com/JessicaNonato/project3-client/main/src/midia/banner05.jpg');    
+    background-size: cover;
+    height: 400px
+}
+.home-text h1{
+    font-family: 'Ms Madi', cursive;
+    font-size: 2.5em;
+    font-weight: normal;
+    color: var(--brown-color);
+    margin: 25px 0 0 85px;
+}
+
+
+/* Produto destaque home */
+.title-highlights h1{
+    margin-top: 55px;
+    text-align: center;
+    font-family: 'Ms Madi', cursive;
+    font-size: 3em;
+    color: var(--brown-color);
+    font-weight: normal;
+}
+
+
+.image-highlights-home {
+    width: 350px;
+}
+
+.product-highlights-home{
+    display: flex;
+    align-items: flex-start;
+    width: 60%;
+    padding: 10px;
+    margin: 10px auto;
+}
+
+.thumb-link{
+    display: flex;
+    flex-direction: column;
+    width: 80px;
+    margin-top: 10px;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.thumb-link:hover {
+    box-shadow: 0 0 2px 1px rgba(238, 23, 202, 0.514);
+  }
+
+
+.row-images-home {
+    display: flex;
+    gap: 10px;
+    margin-right: 15px;
+}
+
+.product-description h3{
+    margin-top: 7px;
+    margin-bottom: 6px;
+}
+
+#subtitle-perfume{
+    margin-top: 6px;
+    margin-bottom: 6px;
+    font-size: 0.9em;
+}
+
+.p-description {
+    font-size: 0.9em;
+    margin-top: 10px;
+    line-height: 1.7;
+}
+
+.btn-buy {
+    background-color: var(--pink-color);
+    padding: 7px 10px;
+    color: var(--brown-color);
+    border: none;
+    border-radius: 15px;
+    font-size: 0.8em;
+    font-style: italic;
+    margin: 5px auto;
+    opacity: 1;
+    cursor: pointer;
+}
+
+.btn-buy:hover {
+    opacity: .7;
+    
+}
+
+/* Footer */
+.footer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 9px;
+    margin-top: 35px;
+    background-color: var(--black-color);
+}
+
+.header-footer{
+    font-size: 0.8em;
+    margin-bottom: 8px;
+    color: var(--white-color);
+}
+
+.header-footer p a {
+    color: var(--white-color);
+}
+
+.header-footer p a:hover {
+    color: var(--white-color);
+    opacity: .5;
+}
+
+
+.footer-footer {
+    font-size: 0.7em;
+    color: var(--white-color);
+}
+
+.footer-footer p a {
+    color: var(--white-color);
+    font-style: italic;
+}
+
+.footer-footer p a:hover {
+    color: var(--white-color);
+    font-style: italic;
+    opacity: .5;
+}
+
+
+/* Pages */
+.back-page {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back-icon {
+    background-color: var(--white-color);
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 100%;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+
+
+
+/* Page Floral */
+.floral {
+    width: 100%;
+}
+
+.banner-floral {
+    font-size: .7em;
+    text-align: right;
+    color: var(--brown-color);
+}
+
+.banner-floral a{
+    color: var(--brown-color);
+    font-style: italic;
+}
+
+.floral-title h1{
+    font-family: 'Ms Madi', cursive;
+    font-size: 3.5em;
+    font-weight: normal;
+    color: var(--brown-color);
+    margin: 80px 0 0 150px;
+    position: absolute;
+}
+
+/* Page Cítrico */
+.citrico-title h1{
+    font-family: 'Ms Madi', cursive;
+    font-size: 3.5em;
+    font-weight: normal;
+    color: var(--brown-color);
+    margin: 80px 0 0 900px;
+    position: absolute;
+}
+
+/* Page Amadeirado */
+.amadeirado-title h1{
+    font-family: 'Ms Madi', cursive;
+    font-size: 3.5em;
+    font-weight: normal;
+    color: var(--brown-color);
+    margin: 150px 0 0 500px;
+    position: absolute;
+}
+
+.amadeirado {
+    opacity: .4;
+}
+
+
+/* Page Oriental */
+.oriental-title h1{
+    font-family: 'Ms Madi', cursive;
+    font-size: 3.5em;
+    font-weight: normal;
+    color: var(--brown-color);
+    margin: 420px 0 0 50px;
+    position: absolute;
+    opacity: 1;
+}
+
+
+
+
+
+
+/* Products */
+.section-products {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin: 20px auto;
+}
+
+.product-card {
+    width: 250px;
+    height: 370px;
+    background-color: var(--white-color);
+    border-radius: 7px;
+    margin: 30px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.shop-item-image{
+    width: 210px;
+    height: 220px;
+}
+
+.description-title {
+    font-size: 0.8em;
+    text-align: center;
+}
+
+.divSizeName {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin: 10px auto;
+}
+
+.description-name {
+    font-size: .7em;
+    text-align: center;
+}
+
+.description-size {
+    text-align: center;
+    font-size: .8em;
+}
+
+.description-price {
+    font-size: .7em;
+    text-align: center;
+    margin-bottom: 5px;
+    color: var(--brown-color);
+}
+
+.description-button {
+    margin-bottom: 15px;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+}
+
+
+
+/* ----------------------------------------------------------------------------------------------------------------------- */
+@media (max-width: 426px){
+    .container {
+        transform-origin: top left;
+        transition: transform 0.5s linear;
+        width: 100vw;
+        min-height: 100vh;
+    }
+    .container.show-nav {
+        transform: rotate(-20deg);
+        border: 1px solid var(--brown-color);
+    }
+    
+    /* header */
+    .header{
+        transform-origin: top left;
+    }
+    .signup{
+        position: absolute; 
+        top: 65px; 
+        gap: 10px;
+        margin-right: -10px;
+    }
+    .signup p{
+        color: var(--brown-color);
+        font-size: 1em;
+    }
+    .signup i {
+        color: var(--brown-color);
+    }
+    .hamburger-menu {
+        display: block;
+        position: absolute;
+        top: 75px;
+        left: 15px;
+        font-size: 1.5em;
+        color: var(--brown-color);
+    }
+
+    /* navbar */
+    .navbar {
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 25px;
+    }
+    .navbar ul {
+        display: none;
+    }
+
+    .main {
+        width: 100%;
+    }
+
+    .wrapper {
+        max-width: 100%;
+        position: relative;
+        margin: 50px;
+    }
+    .carousel img {
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        border-radius: 10px;
+        opacity: 90%;
+    }
+    
+    .carousel img:first-child {
+        margin-left: 0;
+    } 
+    
+    .carousel img:hover {
+        opacity: 50%;
+    }
+    .title-highlights h1{
+        margin-top: 55px;
+        text-align: center;
+        font-family: 'Ms Madi', cursive;
+        font-size: 3em;
+        color: var(--brown-color);
+        font-weight: normal;
+    }
+
+    /* Banner home text */
+    .home-text {
+        width: 100%;
+    }
+    .home-text h1{
+        width: 50%;
+        margin: 25px 0 0 50px;
+        font-size: 2em;
+    }
+    
+    /* produto destaque */
+    
+    .image-highlights-home {
+        width: 15em;
+    }
+
+    .product-highlights-home{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 70%;
+        padding: 10px;
+        margin: 10px auto;
+    }
+
+    .thumbs-images {
+        display: none;
+    }
+
+    .row-images-home {
+        display: flex;
+    }
+
+
+    .product-description h3{
+        margin-top: 7px;
+        margin-bottom: 6px;
+        font-size: 1em;
+        text-align: center;
+    }
+
+    #subtitle-perfume{
+        margin-top: 6px;
+        margin-bottom: 6px;
+        font-size: 0.8em;
+        text-align: center;
+
+    }
+
+    .small{
+        text-align: center;
+        margin: 0 42%;
+    }
+
+    .p-description {
+        font-size: 0.9em;
+        margin-top: 10px;
+        line-height: 1.7;
+    }
+
+    .btn-buy {
+        background-color: var(--pink-color);
+        padding: 7px 10px;
+        color: var(--brown-color);
+        border: none;
+        border-radius: 15px;
+        font-size: 0.8em;
+        font-style: italic;
+        margin: 5px auto;
+        opacity: 1;
+        cursor: pointer;
+    }
+
+    .btn-buy:hover {
+        opacity: .7;
+        
+    }
+
+    /* Footer */
+    .footer {
+        width: 100%;
+    }
+    .header-footer{
+        font-size: 0.8em;
+        margin-bottom: 8px;
+        color: var(--white-color);
+        font-size: 0.6em;
+    }
+
+    .header-footer p a {
+        color: var(--white-color);
+    }
+
+    .footer-footer {
+        font-size: 0.6em;
+        color: var(--white-color);
+    }
+
+    .footer-footer p a {
+        color: var(--white-color);
+        font-style: italic;
+    }
+}
+
+
+/* ---------------------------------------------------------------------------------------------------------------------------- */
+@media (min-width: 426px) and (max-width: 769px) {
+    .home-text h1{
+        margin: 7px auto;
+    }
+    .product-highlights-home {
+        display: flex;
+        flex-direction: column;
+    }
+}

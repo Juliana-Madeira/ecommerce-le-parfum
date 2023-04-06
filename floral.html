@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" 
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" 
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./styles/style.css">
+    <script src="https://www.gstatic.com/firebasejs/9.19.0/firebase-app-compat.js" defer ></script>
+    <script src="https://www.gstatic.com/firebasejs/9.19.0/firebase-auth-compat.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/9.19.0/firebase-firestore-compat.js" defer></script>
+    <script src='./scripts/firebaseConfig.js' type="module" defer></script>
+    <script src="./scripts/navbar.js" defer></script>
+    <script src="./scripts/login.js" defer ></script>
+    <script src="./scripts/floral.js" defer></script>
+    <title>Le Parfum</title>
+</head>
+<body>
+    <div class="container">   <!--show-nav virá aqui via css e javascript para rotate funcionar-->
+        <header class="header">
+            <div class="circle-container">
+                <div class="circle">
+                    <button id="close">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <button id="open">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="logotipo">
+                <a href="./index.html" class="logotipo">
+                    <h4>Le Parfum</h4>
+                </a>
+            </div>
+            <div class="signup">
+                <a href="#">
+                    <p id="login">Login</p>
+                </a>
+                <a href="#">
+                    <i class="fa-solid fa-circle-user icon-user"></i>
+                </a>
+            </div>
+        </header>
+        <nav class="navbar">
+            <div class="hamburger-menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <ul>
+                <li><a href="./floral.html"><i class="fa-solid fa-spa"></i>Floral</a></li>
+                <li><a href="./citrico.html"><i class="fa-solid fa-lemon"></i>Cítrico</a></li>
+                <li><a href="./amadeirado.html"><i class="fa-solid fa-tree"></i>Amadeirado</a></li>
+                <li><a href="./oriental.html"><i class="fa-solid fa-torii-gate"></i>Oriental</a></li>
+            </ul>
+        </nav>
+        <main id="main">
+            <div class="floral-title">
+                <h1>Os florais...</h1>
+            </div>
+            <section class="banner-floral">
+                <figure>
+                    <img src="./images/floralpink.jpg" alt="imagem floral" class="floral">
+                    <p>Foto de <a href="https://unsplash.com/@fallonmichaeltx?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Fallon Michael</a> na <a href="https://unsplash.com/pt-br/fotografias/DTpKjgHpHj4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+                    </p>
+                </figure>
+            </section>
+            <div class="section-products" id="section-products"></div>
+        </main>
+        <section class="back-page">
+            <a href="./index.html" id="link-icon">
+                <i class="fa-solid fa-angle-left back-icon"></i>
+            </a>
+        </section>
+        <footer class="footer">
+            <div class="header-footer">
+                <p>
+                    <a href="">Política de Compras</a> | 
+                    <a href="">Política de Devolução</a> |
+                    <a href="#">Lorem Ipsum</a> |
+                    <a href="#">Lorem Ipsum</a>
+                </p>
+            </div>
+            <div class="footer-footer">
+                <p>Desenvolvido por <a href="https://www.linkedin.com/in/juliana-g-madeira/" target="_blank">Juliana Madeira</a></p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

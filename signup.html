@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" 
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" 
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./styles/style.css">
+    <script src="https://www.gstatic.com/firebasejs/9.19.0/firebase-app-compat.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/9.19.0/firebase-auth-compat.js" defer></script>
+    <script src='./scripts/firebaseConfig.js' type="module" defer></script>
+    <script src="./scripts/login.js" defer ></script>
+    <script src="./scripts/loading.js" defer></script>
+    <title>Le Parfum</title>
+</head>
+<body>
+    <div class="container">   <!--show-nav virá aqui via css e javascript para rotate funcionar-->
+        <header class="header opacity-page">
+            <div class="circle-container">
+                <div class="circle">
+                    <button id="close">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <button id="open">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="logotipo">
+                <a href="./index.html" class="logotipo">
+                    <h4>Le Parfum</h4>
+                </a>
+            </div>
+            <div class="signup">
+                <button class="btn-login">
+                    <p id="login">Login</p>
+                </button>
+                <button class="btn-signup">
+                    <i class="fa-solid fa-circle-user icon-user"></i>
+                </button>
+            </div>
+        </header>
+        <main class="main">
+            <form class="form">
+                <p class="form-title">Crie sua conta</p>
+                <div class="input-login">
+                    <input type="text" placeholder="Nome" id="name" >
+                    <input type="email" placeholder="E-mail" id="email" onchange="onChangeEmail()">
+                    <div class="error" id="email-required-error">Por favor, informe o seu e-mail</div>
+                    <div class="error" id="email-invalid-error">Preencha com um e-mail válido!</div>
+                    <input type="password" placeholder="Senha" id="password" onchange="onChangePassword()">
+                    <div class="error" id="password-required-error">Por favor, informe sua senha</div>
+                    <div class="error" id="password-min-length-error">A senha deve ter no mínimo 6 caracteres</div>
+                    <input type="password" placeholder="Confirmar senha" id="confirm-password" onchange="onChangeConfirmPassword()">
+                    <div class="error" id="password-not-match-error">As senhas devem ser iguais</div>
+                    <button class="btn-buy-login" type="button" id="register-button" onclick="register()" disabled="true">Cadastrar</button>
+                </div>
+                <div class="another">
+                    <p>Já possui uma conta?</p>
+                    <button class="btn-buy" type="button" onclick="toLoginPage()">Login</button>            
+                </div>
+                <div class="close-page">
+                    <small onclick="closePage()">X Fechar</small>
+                </div>
+            </form>
+        </main>                
+    </div>
+</body>
+</html>

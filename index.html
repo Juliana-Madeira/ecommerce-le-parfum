@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" 
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" 
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./styles/style.css">
+    <script src="https://www.gstatic.com/firebasejs/9.19.0/firebase-app-compat.js" defer ></script>
+    <script src="https://www.gstatic.com/firebasejs/9.19.0/firebase-auth-compat.js" defer></script>
+    <script src='./scripts/firebaseConfig.js' type="module" defer></script>
+    <script src="./scripts/navbar.js" defer></script>
+    <script src="./scripts/script.js" defer></script>
+    <title>Le Parfum</title>
+</head>
+<body>
+    <div class="container">   <!--show-nav virá aqui via css e javascript para rotate funcionar-->
+        <header class="header">
+            <div class="circle-container">
+                <div class="circle">
+                    <button id="close">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <button id="open">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="logotipo">
+                <a href="./index.html" class="logotipo">
+                    <h4>Le Parfum</h4>
+                </a>
+            </div>
+            <div class="signup">
+                <button class="btn-login" onclick="toLoginPage()">
+                    <p id="login">Login</p>
+                </button>
+                <button class="btn-signup" onclick="toSignupPage()">
+                    <i class="fa-solid fa-circle-user icon-user"></i>
+                </button>
+                <button class="btn-login" onclick="logout()">Logout</button>
+            </div>
+        </header>
+        <nav class="navbar">
+            <div class="hamburger-menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <ul>
+                <li><a href="./floral.html"><i class="fa-solid fa-spa"></i>Floral</a></li>
+                <li><a href="./citrico.html"><i class="fa-solid fa-lemon"></i>Cítrico</a></li>
+                <li><a href="./amadeirado.html"><i class="fa-solid fa-tree"></i>Amadeirado</a></li>
+                <li><a href="./oriental.html"><i class="fa-solid fa-torii-gate"></i>Oriental</a></li>
+            </ul>
+        </nav>
+        <main class="main">
+            <div class="home-text">
+                <h1>Um perfume para cada ocasião e para você mulher...</h1>
+            </div>
+            <section class="wrapper">
+                <i class="fa-solid fa-angle-left icon" id="left"></i>
+                <div class="carousel" id="images">
+                    <a href="./floral.html"><img src="https://www.sephora.com.br/dw/image/v2/BFJC_PRD/on/demandware.static/-/Sites-masterCatalog_Sephora/pt_BR/dw870d7c6f/images/hi-res-BR/3348901627276.1_1500px.jpg?sw=1200&sh=1200&sm=fit" alt="image carousel" class="carousel-image"></a>
+                    <img src="https://www.sephora.com.br/dw/image/v2/BFJC_PRD/on/demandware.static/-/Sites-masterCatalog_Sephora/pt_BR/dw01621d21/images/hi-res-BR/887167525573_1_1500px.jpg?sw=1200&sh=1200&sm=fit" alt="image carousel" class="carousel-image">
+                    <img src="https://www.sephora.com.br/dw/image/v2/BFJC_PRD/on/demandware.static/-/Sites-masterCatalog_Sephora/pt_BR/dw2f0acc46/images/hi-res-BR/3386460097321.1_1000px.jpg?sw=1200&sh=1200&sm=fit" class="carousel-image">
+                    <img src="https://www.sephora.com.br/dw/image/v2/BFJC_PRD/on/demandware.static/-/Sites-masterCatalog_Sephora/pt_BR/dw92d2e5c8/images/hi-res-BR/8411061994696.1_1500px.jpg?sw=1200&sh=1200&sm=fit" alt="image carousel" class="carousel-image">
+                    <img src="https://www.sephora.com.br/dw/image/v2/BFJC_PRD/on/demandware.static/-/Sites-masterCatalog_Sephora/pt_BR/dw8b4c56b6/images/hi-res-BR/3614228830393_HB_ALV_EDP_20_80ml%20(1)_1500px.jpg?sw=1200&sh=1200&sm=fit" alt="image carousel" class="carousel-image">
+                    <img src="https://www.sephora.com.br/dw/image/v2/BFJC_PRD/on/demandware.static/-/Sites-masterCatalog_Sephora/pt_BR/dw081380bd/images/hi-res-BR/tom_ford-bitter_peach_1.jpg?sw=1200&sh=1200&sm=fit" alt="image carousel" class="carousel-image">
+                    <img src="https://www.sephora.com.br/dw/image/v2/BFJC_PRD/on/demandware.static/-/Sites-masterCatalog_Sephora/pt_BR/dwef73e4fc/images/hi-res-BR/Frag/3423478753754_frasco.jpg?sw=1200&sh=1200&sm=fit" alt="image carousel" class="carousel-image">
+                    <img src="https://www.sephora.com.br/dw/image/v2/BFJC_PRD/on/demandware.static/-/Sites-masterCatalog_Sephora/pt_BR/dwbf744454/images/hi-res-BR/8433982018701.1_1000px.jpg?sw=1200&sh=1200&sm=fit" alt="image carousel" class="carousel-image">
+                    <img src="https://www.sephora.com.br/dw/image/v2/BFJC_PRD/on/demandware.static/-/Sites-masterCatalog_Sephora/pt_BR/dwdfd77b3d/images/hi-res-BR/3614228842822.1_1500px.jpg?sw=1200&sh=1200&sm=fit" alt="image carousel" class="carousel-image">
+                    <img src="https://www.sephora.com.br/dw/image/v2/BFJC_PRD/on/demandware.static/-/Sites-masterCatalog_Sephora/pt_BR/dw8d643ed0/images/hi-res-BR/3614272907652-90ml.jpg?sw=1200&sh=1200&sm=fit" alt="image carousel" class="carousel-image"> 
+                    <img src="https://www.sephora.com.br/dw/image/v2/BFJC_PRD/on/demandware.static/-/Sites-masterCatalog_Sephora/pt_BR/dwf403c49e/images/hi-res-BR/719346256346.1.jpg?sw=1200&sh=1200&sm=fit" alt="image carousel" class="carousel-image">
+                    <img src="https://www.sephora.com.br/dw/image/v2/BFJC_PRD/on/demandware.static/-/Sites-masterCatalog_Sephora/pt_BR/dw95141bbd/images/hi-res-BR/55267-BOUCHERON%20COLLECTION%20ROSE%20DISPARTA%20125ML%20FRASCO%202000X2000_1500px.jpg?sw=1200&sh=1200&sm=fit" alt="image carousel" class="carousel-image"> 
+                    <img src="https://www.sephora.com.br/dw/image/v2/BFJC_PRD/on/demandware.static/-/Sites-masterCatalog_Sephora/pt_BR/dwd0485bd1/images/hi-res-BR/_55C845E3-3B7F-4BF0-B1F2-68B9C7788050__65096853_500x500.jpg?sw=1200&sh=1200&sm=fit" alt="image carousel" class="carousel-image">
+                    <img src="https://www.sephora.com.br/dw/image/v2/BFJC_PRD/on/demandware.static/-/Sites-masterCatalog_Sephora/pt_BR/dwf643b316/images/hi-res-BR/8426017070232.1_1000px.jpg?sw=1200&sh=1200&sm=fit" alt="image carousel" class="carousel-image">
+                </div>
+                <i class="fa-solid fa-angle-right icon" id="right"></i>
+            </section>
+            <div class="title-highlights">
+                <h1>Destaque</h1>
+            </div>
+            <section class="product-highlights-home">
+                <div class="row-images-home">
+                    <div>
+                        <ul class="thumbs-images">
+                            <li class="thumb-link">
+                                <img src="https://www.sephora.com.br/dw/image/v2/BFJC_PRD/on/demandware.static/-/Sites-masterCatalog_Sephora/pt_BR/dwdfd77b3d/images/hi-res-BR/3614228842822.1_1500px.jpg?sw=1200&sh=1200&sm=fit" alt="thumb image do perfume" id="thumb1">
+                            </li>
+                            <li class="thumb-link">
+                                <img src="https://www.sephora.com.br/dw/image/v2/BFJC_PRD/on/demandware.static/-/Sites-masterCatalog_Sephora/pt_BR/dwa7613a4e/images/hi-res-BR/3614228842822.2_1000px.jpg?sw=556&sh=680&sm=fit" alt="thumb image do perfume" id="thumb2">
+                            </li>
+                            <li class="thumb-link">
+                                <img src="https://www.sephora.com.br/dw/image/v2/BFJC_PRD/on/demandware.static/-/Sites-masterCatalog_Sephora/pt_BR/dw26232471/images/hi-res-BR/3614228842785.3_1000px.jpg?sw=556&sh=680&sm=fit" alt="thumb image do perfume" id="thumb3">
+                            </li>
+                        </ul>
+                    </div>
+                    <figure class="product-image">
+                        <img src="https://www.sephora.com.br/dw/image/v2/BFJC_PRD/on/demandware.static/-/Sites-masterCatalog_Sephora/pt_BR/dwdfd77b3d/images/hi-res-BR/3614228842822.1_1500px.jpg?sw=1200&sh=1200&sm=fit" class="image-highlights-home" id="mainImg">
+                    </figure>
+                </div>
+                <div class="product-description">
+                    <h3>Chloé</h3>
+                    <p id="subtitle-perfume">PERFUME CHLOÉ NATURELLE FEMININO EAU DE PARFUM</p>
+                    <small class="small">100ml</small>
+                    <p class="p-description">Chloé Naturelle Eau de Parfum é um perfume conectando a força e a espontaneidade da natureza com a da mulher de espírito livre Chloé. Sem esforço, elegante, mas também autêntica e consciente, vive em harmonia com o ambiente natural que preza e que a inspira.Este perfume refrescante e feminino traduz uma consciência ecológica enraizado na natureza para um luxo sustentável que ressoa com o estilo de vida independente da mulher Chloé. Vegano e formulado com uma fragrância de origem 100% natural, inclui ingredientes de origem ética e álcool de origem natural para envolvê-la no frescor floral durante todo o dia.</p>
+                    <button class="btn-buy">Adicionar ao carrinho</button>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="header-footer">
+                <p>
+                    <a href="#">Política de Compras</a> | 
+                    <a href="#">Política de Devolução</a> |
+                    <a href="#">Lorem Ipsum</a> |
+                    <a href="#">Lorem Ipsum</a>
+                </p>
+            </div>
+            <div class="footer-footer">
+                <p>Desenvolvido por <a href="https://www.linkedin.com/in/juliana-g-madeira/" target="_blank">Juliana Madeira</a></p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
